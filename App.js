@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
+
 
 // Import Pages
 import { ContactScreen } from './pages/ContactScreen.js';
@@ -17,6 +18,10 @@ const Tab = createBottomTabNavigator();
 function TopBar() {
   return (
     <View style={styles.TopBar}>
+      <Image
+        style={styles.Logo}
+        source={require('./assets/IglesiaVidaLogo.png')}
+      />
       <Text>Hello</Text>
     </View>
   );
@@ -96,6 +101,15 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0,
     borderBottomRightRadius: 30,
-    borderBottomLeftRadius: 30
+    borderBottomLeftRadius: 30,
+    alignContent: "center",
+    justifyContent: "center"
+  },
+  Logo: {
+    alignSelf: "center",
+    marginTop: 40,
+    width: 200,
+    height: 300,
+    resizeMode: "contain"
   }
 });
