@@ -33,6 +33,15 @@ export default function App() {
         <TopBar/>
         <Tab.Navigator 
           initialRouteName="Home"
+          screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            if (focused) {
+              size =+ 3
+            } else {
+              size = size
+            }
+          },
+        })}
           tabBarOptions={{
             style: {
               backgroundColor: '#fff',
